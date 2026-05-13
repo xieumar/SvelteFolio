@@ -65,7 +65,7 @@
 	});
 </script>
 
-<section id="about" bind:this={containerRef} class="py-32 px-4 bg-obsidian relative overflow-hidden">
+<section id="about" bind:this={containerRef} class="py-32 px-4 bg-theme relative overflow-hidden">
 	<!-- Background HUD Grid -->
 	<div class="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 

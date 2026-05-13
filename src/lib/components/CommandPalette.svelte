@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import Icon from '@iconify/svelte';
+	import { theme } from '$lib/theme.svelte';
 	import { projects } from '$lib/data/projects';
 
 	let isOpen = $state(false);
@@ -11,7 +12,7 @@
 	let inputRef: HTMLInputElement | undefined = $state();
 
 	const actions = [
-		{ id: 'theme', title: 'Switch Theme', icon: 'lucide:sun', action: () => console.log('Theme toggle') },
+		{ id: 'theme', title: 'Switch Theme', icon: 'lucide:sun', action: () => theme.toggle() },
 		{ id: 'resume', title: 'Download Resume', icon: 'lucide:download', action: () => window.open('#', '_blank') },
 		{ id: 'contact', title: 'Get in Touch', icon: 'lucide:mail', action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
 	];
@@ -102,7 +103,7 @@
 					class="w-full bg-transparent border-none outline-none text-lg text-white placeholder:text-slate font-sans"
 				/>
 				<div class="flex items-center gap-1">
-					<kbd class="px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] text-slate font-mono uppercase">ESC</kbd>
+					<kbd class="px-2 py-1 rounded bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[10px] text-[var(--text-secondary)] font-mono uppercase">ESC</kbd>
 				</div>
 			</div>
 
@@ -112,13 +113,13 @@
 					{#each filteredItems as item, i}
 						<button 
 							class="w-full flex items-center justify-between p-4 rounded-xl transition-all text-left
-								{i === selectedIndex ? 'bg-cyber/10 border border-cyber/30' : 'hover:bg-white/5 border border-transparent'}"
+								{i === selectedIndex ? 'bg-cyber/10 border border-cyber/30' : 'hover:bg-[var(--glass-bg)] border border-transparent'}"
 							onmousemove={() => selectedIndex = i}
 							onclick={() => executeItem(item)}
 						>
 							<div class="flex items-center gap-4">
 								<div class="w-10 h-10 rounded-lg flex items-center justify-center 
-									{item.type === 'project' ? 'bg-white/5' : 'bg-cyber/20 text-cyber'}">
+									{item.type === 'project' ? 'bg-[var(--glass-bg)]' : 'bg-cyber/20 text-cyber'}">
 									<Icon icon={item.type === 'project' ? 'lucide:layers' : item.icon} class="w-5 h-5" />
 								</div>
 								<div>
@@ -147,7 +148,7 @@
 			</div>
 
 			<!-- Footer -->
-			<div class="px-6 py-3 bg-white/5 border-top border-white/10 flex items-center justify-between">
+			<div class="px-6 py-3 bg-[var(--glass-bg)] border-top border-[var(--glass-border)] flex items-center justify-between">
 				<div class="flex items-center gap-4 text-[10px] text-slate font-mono uppercase tracking-wider">
 					<div class="flex items-center gap-1">
 						<kbd class="px-1 py-0.5 rounded bg-white/5 border border-white/10">↑↓</kbd> Navigate

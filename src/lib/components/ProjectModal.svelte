@@ -82,7 +82,7 @@
 		<!-- Backdrop -->
 		<div 
 			bind:this={backdropRef}
-			class="absolute inset-0 bg-obsidian/95"
+			class="absolute inset-0 bg-theme/95"
 			onmousedown={handleClose}
 		>
 			<div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
@@ -90,7 +90,7 @@
 		
 		<div 
 			bind:this={frameRef}
-			class="relative w-full max-w-7xl h-full max-h-[90vh] bg-black/60 border border-cyber/30 rounded-[1rem] flex flex-col md:flex-row shadow-[0_0_100px_rgba(0,255,157,0.1)] overflow-hidden"
+			class="relative w-full max-w-7xl h-full max-h-[90vh] bg-theme/80 border border-cyber/30 rounded-[1rem] flex flex-col md:flex-row shadow-[0_0_100px_rgba(0,255,157,0.1)] overflow-hidden"
 			onmousedown={(e) => e.stopPropagation()}
 			style="transform-style: preserve-3d;"
 		>
@@ -114,7 +114,7 @@
 							ProjectID // 0{project.id} <br />
 							Status // Deployed_
 						</div>
-						<div class="font-mono text-[10px] text-white/40 text-right">
+						<div class="font-mono text-[10px] text-[var(--text-secondary)] text-right">
 							LAT: 51.5074 <br />
 							LNG: 0.1278
 						</div>
@@ -124,7 +124,7 @@
 			</div>
 
 			<!-- Right: Technical Specs -->
-			<div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col bg-obsidian/40 backdrop-blur-xl overflow-y-auto scrollbar-hide">
+			<div class="w-full md:w-2/5 p-8 md:p-12 flex flex-col bg-theme/40 backdrop-blur-xl overflow-y-auto scrollbar-hide">
 				<div class="mb-12">
 					<div class="inline-block px-3 py-1 bg-cyber/10 border border-cyber/30 rounded text-[10px] font-mono text-cyber uppercase tracking-widest mb-6">
 						Engineering Specification
@@ -140,10 +140,10 @@
 				<!-- Data Grid -->
 				<div class="grid grid-cols-1 gap-6 mb-12">
 					<div class="space-y-4">
-						<h4 class="text-[10px] font-mono uppercase text-white/40 tracking-[0.3em]">Module Stack</h4>
+						<h4 class="text-[10px] font-mono uppercase text-[var(--text-secondary)] tracking-[0.3em]">Module Stack</h4>
 						<div class="flex flex-wrap gap-2">
 							{#each project.tags as tag}
-								<div class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-white flex items-center gap-2 group hover:border-cyber transition-colors">
+								<div class="px-3 py-1.5 rounded-lg bg-[var(--glass-bg)] border border-[var(--glass-border)] text-xs font-mono text-[var(--text-primary)] flex items-center gap-2 group hover:border-cyber transition-colors">
 									<div class="w-1.5 h-1.5 rounded-full bg-cyber animate-pulse"></div>
 									{tag}
 								</div>
@@ -159,7 +159,7 @@
 								<span class="text-white/60 uppercase">Performance</span>
 								<span class="text-cyber">98%</span>
 							</div>
-							<div class="h-1 bg-white/5 rounded-full">
+							<div class="h-1 bg-[var(--glass-bg)] rounded-full">
 								<div class="h-full bg-cyber w-[98%] shadow-[0_0_10px_#00ff9d]"></div>
 							</div>
 						</div>
@@ -171,7 +171,7 @@
 					<a href={project.link} class="flex-1 py-5 bg-cyber text-obsidian text-center font-bold font-mono text-sm uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
 						Execute <Icon icon="lucide:terminal" class="w-4 h-4" />
 					</a>
-					<a href={project.github} class="w-16 h-16 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all">
+					<a href={project.github} class="w-16 h-16 border border-[var(--glass-border)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-primary)] transition-all">
 						<Icon icon="lucide:github" class="w-6 h-6" />
 					</a>
 				</div>
@@ -180,7 +180,7 @@
 			<!-- Exit Command -->
 			<button 
 				onclick={handleClose}
-				class="absolute top-8 right-8 z-40 p-2 text-white/40 hover:text-cyber transition-colors group flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest"
+				class="absolute top-8 right-8 z-40 p-2 text-[var(--text-secondary)] hover:text-cyber transition-colors group flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest"
 			>
 				Close [ESC] <Icon icon="lucide:x" class="w-4 h-4 group-hover:rotate-90 transition-transform" />
 			</button>

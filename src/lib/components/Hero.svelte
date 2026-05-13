@@ -45,7 +45,7 @@
 			Digital Experiences.
 		</h1>
 		
-		<p bind:this={subTitleRef} class="text-slate text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed">
+		<p bind:this={subTitleRef} class="text-[var(--text-secondary)] text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed">
 			A full-stack engineer dedicated to building high-performance, 
 			visually stunning web applications with Svelte and modern engineering practices.
 		</p>

@@ -76,7 +76,7 @@
 	}
 </script>
 
-<section id="projects" class="py-24 px-4 bg-obsidian relative overflow-hidden" bind:this={gridRef}>
+<section id="projects" class="py-24 px-4 bg-theme relative overflow-hidden" bind:this={gridRef}>
 	<div class="max-w-7xl mx-auto">
 		<div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
 			<div class="max-w-2xl">
@@ -110,7 +110,7 @@
 					<!-- Image Background -->
 					<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
 						<img src={project.image} alt={project.title} class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all" />
-						<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent"></div>
+						<div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/20 to-transparent"></div>
 					</div>
 
 					<!-- Glow Effect -->
@@ -120,7 +120,7 @@
 					<div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
 						<div class="flex flex-wrap gap-2 mb-4">
 							{#each project.tags as tag}
-								<span class="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md bg-white/5 border border-white/10 backdrop-blur-md">
+								<span class="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md bg-[var(--glass-bg)] border border-[var(--glass-border)] backdrop-blur-md">
 									{tag}
 								</span>
 							{/each}

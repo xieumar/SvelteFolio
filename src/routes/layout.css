@@ -13,9 +13,27 @@
 
 @layer base {
   :root {
-    background-color: var(--color-obsidian);
-    color: white;
+    --bg-primary: var(--color-obsidian);
+    --text-primary: #ffffff;
+    --text-secondary: var(--color-slate);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-family: var(--font-sans);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  :root.light {
+    --bg-primary: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --glass-bg: rgba(15, 23, 42, 0.03);
+    --glass-border: rgba(15, 23, 42, 0.1);
+    
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
   }
 
   body {
@@ -24,12 +42,22 @@
 }
 
 @layer utilities {
+  .bg-theme {
+    background-color: var(--bg-primary);
+  }
+
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-cyber;
+  }
+
+  .light .text-gradient {
+    @apply bg-gradient-to-r from-obsidian via-obsidian/70 to-cyber;
   }
 
   .border-gradient {

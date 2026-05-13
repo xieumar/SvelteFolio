@@ -68,7 +68,7 @@
 	}
 </script>
 
-<section id="contact" class="py-24 px-4 bg-obsidian relative overflow-hidden">
+<section id="contact" class="py-24 px-4 bg-theme relative overflow-hidden">
 	<!-- Background Ambient Glow -->
 	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full -z-10 opacity-30 blur-[120px] bg-gradient-to-tr from-cyber/30 via-blue-500/10 to-purple-500/20"></div>
 
