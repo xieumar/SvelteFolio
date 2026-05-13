@@ -24,7 +24,7 @@
 	<title>Developer Portfolio | The Velocity Terminal</title>
 </svelte:head>
 
-<main class="min-h-screen selection:bg-cyber selection:text-obsidian text-white bg-obsidian">
+<main class="min-h-screen selection:bg-cyber selection:text-obsidian text-white">
 	<Navbar />
 	<CommandPalette />
 	{@render children()}

@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import Icon from '@iconify/svelte';
+	import ShaderBackground from './ShaderBackground.svelte';
 
 	let heroRef: HTMLElement;
 	let titleRef: HTMLHeadingElement;
@@ -26,38 +27,16 @@
 			'-=0.8'
 		);
 	});
-
-	function handleMouseMove(e: MouseEvent) {
-		const { clientX, clientY } = e;
-		const { innerWidth, innerHeight } = window;
-		
-		// Subtle background parallax
-		const moveX = (clientX / innerWidth - 0.5) * 30;
-		const moveY = (clientY / innerHeight - 0.5) * 30;
-		
-		gsap.to('.bg-gradient-circle', {
-			x: moveX,
-			y: moveY,
-			duration: 2,
-			ease: 'power2.out',
-			stagger: 0.1
-		});
-	}
 </script>
 
 <section 
 	bind:this={heroRef} 
-	onmousemove={handleMouseMove}
 	role="region"
 	aria-label="Hero Section"
 	class="relative min-h-screen flex items-center justify-center overflow-hidden px-4"
 >
-	<!-- Animated Background -->
-	<div class="absolute inset-0 -z-10 bg-obsidian">
-		<div class="bg-gradient-circle absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-cyber/20 blur-[120px] rounded-full"></div>
-		<div class="bg-gradient-circle absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[120px] rounded-full"></div>
-		<div class="bg-gradient-circle absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-purple-500/10 blur-[120px] rounded-full"></div>
-	</div>
+	<!-- GLSL Shader Background -->
+	<ShaderBackground />
 
 	<!-- Content -->
 	<div class="max-w-5xl text-center z-10">
