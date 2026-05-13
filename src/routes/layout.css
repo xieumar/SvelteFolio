@@ -1,1 +1,38 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-cyber: #00ff9d;
+  --color-obsidian: #0a0a0a;
+  --color-slate: #64748b;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-obsidian);
+    color: white;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-cyber;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(to right, transparent, var(--color-cyber), transparent) 1;
+  }
+}
