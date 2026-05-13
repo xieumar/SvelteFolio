@@ -4,7 +4,7 @@
   --color-cyber: #00ff9d;
   --color-obsidian: #0a0a0a;
   --color-slate: #64748b;
-  
+
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
@@ -27,7 +27,7 @@
   .glass {
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-cyber;
   }

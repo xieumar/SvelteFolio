@@ -1,27 +1,28 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { projects } from '$lib/data/projects';
 	import Icon from '@iconify/svelte';
 
-	gsap.registerPlugin(ScrollTrigger);
-
 	let gridRef: HTMLElement;
 
-	onMount(() => {
+	onMount(async () => {
+		const { gsap } = await import('gsap');
+		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+		
+		gsap.registerPlugin(ScrollTrigger);
+
 		const cards = gridRef.querySelectorAll('.project-card');
 		
 		gsap.from(cards, {
 			scrollTrigger: {
 				trigger: gridRef,
-				start: 'top 80%',
+				start: 'top bottom',
+				toggleActions: 'play none none none'
 			},
-			y: 60,
-			opacity: 0,
-			duration: 1,
-			stagger: 0.2,
-			ease: 'power4.out'
+			y: 50,
+			duration: 0.8,
+			stagger: 0.1,
+			ease: 'power2.out'
 		});
 	});
 
@@ -113,7 +114,7 @@
 								<span class="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded-md bg-white/5 border border-white/10 backdrop-blur-md">
 									{tag}
 								</span>
-							{each}
+							{/each}
 						</div>
 						
 						<h3 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight group-hover:text-cyber transition-colors">
