@@ -1,9 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { projects } from '$lib/data/projects';
+	import { projects, type Project } from '$lib/data/projects';
 	import Icon from '@iconify/svelte';
+	import ProjectModal from './ProjectModal.svelte';
 
 	let gridRef: HTMLElement;
+	let selectedProject = $state<Project | null>(null);
+	let isModalOpen = $state(false);
+
+	function openProject(project: Project) {
+		selectedProject = project;
+		isModalOpen = true;
+	}
 
 	onMount(async () => {
 		const { gsap } = await import('gsap');
@@ -93,9 +101,10 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{#each projects as project, i}
 				<div 
-					class="project-card group relative aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-3xl glass transition-all perspective-1000"
+					class="project-card group relative aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-3xl glass transition-all perspective-1000 cursor-pointer"
 					onmousemove={(e) => handleMouseMove(e, e.currentTarget)}
 					onmouseleave={(e) => handleMouseLeave(e.currentTarget)}
+					onclick={() => openProject(project)}
 					role="article"
 				>
 					<!-- Image Background -->
@@ -138,6 +147,12 @@
 			{/each}
 		</div>
 	</div>
+
+	<ProjectModal 
+		project={selectedProject} 
+		isOpen={isModalOpen} 
+		onClose={() => isModalOpen = false} 
+	/>
 </section>
 
 <style>
