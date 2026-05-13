@@ -7,8 +7,8 @@
 	let isOpen = $state(false);
 	let searchTerm = $state('');
 	let selectedIndex = $state(0);
-	let modalRef: HTMLElement;
-	let inputRef: HTMLInputElement;
+	let modalRef: HTMLElement | undefined = $state();
+	let inputRef: HTMLInputElement | undefined = $state();
 
 	const actions = [
 		{ id: 'theme', title: 'Switch Theme', icon: 'lucide:sun', action: () => console.log('Theme toggle') },
@@ -90,6 +90,7 @@
 			bind:this={modalRef}
 			class="w-full max-w-2xl glass rounded-2xl overflow-hidden shadow-2xl border border-white/10"
 			onmousedown={(e) => e.stopPropagation()}
+			role="presentation"
 		>
 			<!-- Search Input -->
 			<div class="flex items-center px-6 py-4 border-b border-white/10">
