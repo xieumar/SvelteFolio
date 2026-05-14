@@ -36,6 +36,10 @@
     color: var(--text-primary);
   }
 
+  * {
+    cursor: crosshair !important;
+  }
+
   body {
     @apply antialiased overflow-x-hidden;
   }

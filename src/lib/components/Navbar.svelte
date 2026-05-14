@@ -23,9 +23,9 @@
 		
 		<a href="/" class="text-xl font-bold tracking-tighter flex items-center gap-2 group">
 			<div class="w-8 h-8 rounded-lg bg-cyber flex items-center justify-center group-hover:rotate-12 transition-transform">
-				<span class="text-obsidian font-mono text-xs font-bold">V</span>
+				<span class="text-[var(--text-primary)] text-base font-bold">Z</span>
 			</div>
-			<span class="text-[var(--text-primary)]">Velocity</span>
+
 		</a>
 
 		<div class="hidden md:flex items-center gap-6">
