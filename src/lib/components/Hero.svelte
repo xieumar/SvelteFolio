@@ -67,28 +67,29 @@
 			</div>
 
 			<!-- Main Title -->
-			<h1 bind:this={titleRef} class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 leading-[1.1]">
-				<div class="overflow-hidden inline-block"><span class="anim-text block">Building</span></div>
-				<div class="overflow-hidden inline-block"><span class="anim-text block text-gradient">Digital</span></div>
+			<h1 bind:this={titleRef} class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter mb-8 leading-tight">
+				<div class="inline-block"><span class="anim-text block">Building</span></div>
+				<div class="inline-block"><span class="anim-text block text-gradient">Digital</span></div>
 				<br class="hidden md:block" />
-				<div class="overflow-hidden inline-block"><span class="anim-text block">Experiences.</span></div>
+				<div class="inline-block"><span class="anim-text block">Experiences.</span></div>
 			</h1>
 			
 			<!-- Introduction -->
 			<p bind:this={subTitleRef} class="text-[var(--text-secondary)] text-lg md:text-xl max-w-2xl mb-10 font-sans leading-relaxed">
-				I bridge the gap between design and engineering, crafting high-performance, 
-				visually stunning web applications with modern technologies and a relentless focus on the user.
+				I'm a frontend developer who loves turning complex problems into simple, beautiful, and intuitive interface designs.
+
+Get in touch to create something amazing.
 			</p>
 			
 			<!-- CTAs -->
-			<div bind:this={ctaRef} class="flex flex-col sm:flex-row items-center gap-6 mb-12 w-full md:w-auto">
-				<a href="#contact" class="w-full sm:w-auto group relative px-8 py-4 bg-cyber text-obsidian font-black uppercase tracking-wider text-sm rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(0,255,157,0.4)] active:scale-95 flex items-center justify-center gap-3">
+			<div bind:this={ctaRef} class="flex flex-col sm:flex-row items-center gap-6 mb-8 w-full md:w-auto">
+				<a href="#contact" class="w-full sm:w-auto group relative px-8 py-4 bg-cyber text-obsidian font-semibold uppercase tracking-wider text-sm rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,255,157,0.4)] active:scale-95 flex items-center justify-center gap-3">
 					<span class="relative z-10 flex items-center gap-2">
 						Start a Project <Icon icon="lucide:arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
 					</span>
 				</a>
 				
-				<a href="/resume.pdf" target="_blank" class="w-full sm:w-auto group px-8 py-4 glass text-white font-bold uppercase tracking-wider text-sm rounded-full hover:bg-white/10 hover:border-cyber/30 transition-all flex items-center justify-center gap-3">
+				<a href="/resume.pdf" target="_blank" class="w-full sm:w-auto group px-8 py-4 glass text-white font-semibold uppercase tracking-wider text-sm rounded-full hover:bg-white/10 hover:border-cyber/30 transition-all duration-300 flex items-center justify-center gap-3">
 					<Icon icon="lucide:download" class="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
 					Download Resume
 				</a>
@@ -96,17 +97,29 @@
 
 			<!-- Social Links -->
 			<div bind:this={socialRef} class="flex items-center gap-4">
-				<a href="https://github.com/zee" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate hover:text-white hover:border-cyber/50 transition-all hover:-translate-y-1" aria-label="GitHub">
-					<Icon icon="mdi:github" class="w-6 h-6" />
+				<a href="https://github.com/xieumar" target="_blank" class="group h-12 w-12 hover:w-[120px] rounded-full glass flex items-center text-slate hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="GitHub">
+					<div class="flex items-center justify-center w-12 h-12 shrink-0">
+						<Icon icon="mdi:github" class="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
+					</div>
+					<span class="font-bold text-sm whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">GitHub</span>
 				</a>
-				<a href="https://linkedin.com/in/zee" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate hover:text-[#0A66C2] hover:border-[#0A66C2]/50 transition-all hover:-translate-y-1" aria-label="LinkedIn">
-					<Icon icon="mdi:linkedin" class="w-6 h-6" />
+				<a href="https://www.linkedin.com/in/zainab-umar-ibrahim-48929b1ba/" target="_blank" class="group h-12 w-12 hover:w-[125px] rounded-full glass flex items-center text-slate hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:bg-[#0A66C2]/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="LinkedIn">
+					<div class="flex items-center justify-center w-12 h-12 shrink-0">
+						<Icon icon="mdi:linkedin" class="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
+					</div>
+					<span class="font-bold text-sm whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">LinkedIn</span>
 				</a>
-				<a href="https://twitter.com/zee" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate hover:text-white hover:border-white/50 transition-all hover:-translate-y-1" aria-label="Twitter">
-					<Icon icon="ri:twitter-x-fill" class="w-5 h-5" />
+				<a href="https://twitter.com/xiaoma0_" target="_blank" class="group h-12 w-12 hover:w-[110px] rounded-full glass flex items-center text-slate hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="Twitter">
+					<div class="flex items-center justify-center w-12 h-12 shrink-0">
+						<Icon icon="ri:twitter-x-fill" class="w-5 h-5 group-hover:scale-110 transition-transform duration-500" />
+					</div>
+					<span class="font-bold text-sm whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">Twitter</span>
 				</a>
-				<a href="mailto:hello@zee.dev" class="w-12 h-12 rounded-full glass flex items-center justify-center text-slate hover:text-cyber hover:border-cyber/50 transition-all hover:-translate-y-1" aria-label="Email">
-					<Icon icon="lucide:mail" class="w-5 h-5" />
+				<a href="mailto:xieumar@gmail.com" class="group h-12 w-12 hover:w-[105px] rounded-full glass flex items-center text-slate hover:text-cyber hover:border-cyber/50 hover:bg-cyber/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="Email">
+					<div class="flex items-center justify-center w-12 h-12 shrink-0">
+						<Icon icon="lucide:mail" class="w-5 h-5 group-hover:scale-110 transition-transform duration-500" />
+					</div>
+					<span class="font-bold text-sm whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">Email</span>
 				</a>
 			</div>
 		</div>
@@ -125,5 +138,6 @@
 	.anim-text {
 		display: block;
 		transform-origin: left bottom;
-	}
+		padding-bottom: 0.2em; 
+		margin-bottom: -0.2em;	}
 </style>
