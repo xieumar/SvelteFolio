@@ -1,7 +1,7 @@
 import { json } from '@sveltejs/kit';
 import nodemailer from 'nodemailer';
 import type { RequestHandler } from './$types';
-import { EMAIL_USER, EMAIL_PASS } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
@@ -16,8 +16,8 @@ export const POST: RequestHandler = async ({ request }) => {
 			port: 465,
 			secure: true,
 			auth: {
-				user: EMAIL_USER,
-				pass: EMAIL_PASS,
+				user: env.EMAIL_USER,
+				pass: env.EMAIL_PASS,
 			},
 		});
 
@@ -57,8 +57,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		`;
 
 		await transporter.sendMail({
-			from: `"Velocity Terminal" <${EMAIL_USER}>`,
-			to: EMAIL_USER, // Sending to yourself
+			from: `"Velocity Terminal" <${env.EMAIL_USER}>`,
+			to: env.EMAIL_USER, // Sending to yourself
 			replyTo: email,
 			subject: `New Transmission from ${name}`,
 			html,
