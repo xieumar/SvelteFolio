@@ -3,7 +3,7 @@
 	import gsap from 'gsap';
 	import Icon from '@iconify/svelte';
 	import { theme } from '$lib/theme.svelte';
-	import { projects } from '$lib/data/projects';
+	import { projects, type Project } from '$lib/data/projects';
 
 	let isOpen = $state(false);
 	let searchTerm = $state('');
@@ -17,15 +17,17 @@
 		{ id: 'contact', title: 'Get in Touch', icon: 'lucide:mail', action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
 	];
 
-	let filteredItems = $derived.by(() => {
+	type Item = (Project & { type: 'project' }) | (typeof actions[0] & { type: 'action' });
+	
+	let filteredItems = $derived.by((): Item[] => {
 		const term = searchTerm.toLowerCase();
 		const matchedProjects = projects.filter(p => 
 			p.title.toLowerCase().includes(term) || p.tags.some(t => t.toLowerCase().includes(term))
-		).map(p => ({ ...p, type: 'project' }));
+		).map(p => ({ ...p, type: 'project' as const }));
 		
 		const matchedActions = actions.filter(a => 
 			a.title.toLowerCase().includes(term)
-		).map(a => ({ ...a, type: 'action' }));
+		).map(a => ({ ...a, type: 'action' as const }));
 
 		return [...matchedActions, ...matchedProjects];
 	});
@@ -35,10 +37,12 @@
 		if (isOpen) {
 			selectedIndex = 0;
 			setTimeout(() => inputRef?.focus(), 10);
-			gsap.fromTo(modalRef, 
-				{ scale: 0.95, opacity: 0 }, 
-				{ scale: 1, opacity: 1, duration: 0.2, ease: 'power2.out' }
-			);
+			if (modalRef) {
+				gsap.fromTo(modalRef, 
+					{ scale: 0.95, opacity: 0 }, 
+					{ scale: 1, opacity: 1, duration: 0.2, ease: 'power2.out' }
+				);
+			}
 		}
 	}
 
@@ -64,7 +68,7 @@
 		}
 	}
 
-	function executeItem(item: any) {
+	function executeItem(item: Item) {
 		if (item.type === 'action') {
 			item.action();
 		} else if (item.type === 'project') {

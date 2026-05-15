@@ -23,45 +23,51 @@
 	let typedText = $state('');
 	const fullText = JSON.stringify(technicalDNA, null, 2);
 
-	onMount(async () => {
-		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-		gsap.registerPlugin(ScrollTrigger);
+	onMount(() => {
+		let interval: NodeJS.Timeout;
 
-		// Typing Animation
-		let i = 0;
-		const interval = setInterval(() => {
-			typedText += fullText[i];
-			i++;
-			if (i >= fullText.length) clearInterval(interval);
-		}, 30);
+		const init = async () => {
+			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+			gsap.registerPlugin(ScrollTrigger);
 
-		// Section Entrance
-		gsap.from(containerRef, {
-			scrollTrigger: {
-				trigger: containerRef,
-				start: 'top 80%',
-				toggleActions: 'play none none reverse'
-			},
-			opacity: 0,
-			y: 100,
-			duration: 1.5,
-			ease: 'expo.out'
-		});
+			// Typing Animation
+			let i = 0;
+			interval = setInterval(() => {
+				typedText += fullText[i];
+				i++;
+				if (i >= fullText.length) clearInterval(interval);
+			}, 30);
 
-		// Staggered Stats Reveal
-		gsap.from('.stat-row', {
-			scrollTrigger: {
-				trigger: statsRef,
-				start: 'top 85%'
-			},
-			x: -50,
-			opacity: 0,
-			stagger: 0.2,
-			duration: 1,
-			ease: 'power4.out'
-		});
+			// Section Entrance
+			gsap.from(containerRef, {
+				scrollTrigger: {
+					trigger: containerRef,
+					start: 'top 80%',
+					toggleActions: 'play none none reverse'
+				},
+				opacity: 0,
+				y: 100,
+				duration: 1.5,
+				ease: 'expo.out'
+			});
 
-		return () => clearInterval(interval);
+			// Staggered Stats Reveal
+			gsap.from('.stat-row', {
+				scrollTrigger: {
+					trigger: statsRef,
+					start: 'top 85%'
+				},
+				x: -50,
+				opacity: 0,
+				stagger: 0.2,
+				duration: 1,
+				ease: 'power4.out'
+			});
+		};
+
+		init();
+
+		return () => interval && clearInterval(interval);
 	});
 </script>
 

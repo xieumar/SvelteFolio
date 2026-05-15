@@ -46,7 +46,7 @@
 		});
 	}
 
-	onMount(async () => {
+	onMount(() => {
 		let frame: number;
 		const loop = () => {
 			orbs.forEach(orb => {

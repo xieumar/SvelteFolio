@@ -13,25 +13,29 @@
 		isModalOpen = true;
 	}
 
-	onMount(async () => {
-		const { gsap } = await import('gsap');
-		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-		
-		gsap.registerPlugin(ScrollTrigger);
+	onMount(() => {
+		const init = async () => {
+			const { gsap } = await import('gsap');
+			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+			
+			gsap.registerPlugin(ScrollTrigger);
 
-		const cards = gridRef.querySelectorAll('.project-card');
-		
-		gsap.from(cards, {
-			scrollTrigger: {
-				trigger: gridRef,
-				start: 'top bottom',
-				toggleActions: 'play none none none'
-			},
-			y: 50,
-			duration: 0.8,
-			stagger: 0.1,
-			ease: 'power2.out'
-		});
+			const cards = gridRef.querySelectorAll('.project-card');
+			
+			gsap.from(cards, {
+				scrollTrigger: {
+					trigger: gridRef,
+					start: 'top bottom',
+					toggleActions: 'play none none none'
+				},
+				y: 50,
+				duration: 0.8,
+				stagger: 0.1,
+				ease: 'power2.out'
+			});
+		};
+
+		init();
 	});
 
 	function handleMouseMove(e: MouseEvent, card: HTMLElement) {

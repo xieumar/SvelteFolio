@@ -6,9 +6,9 @@
 
 	let { project, isOpen, onClose }: { project: Project | null, isOpen: boolean, onClose: () => void } = $props();
 
-	let modalRef: HTMLElement;
-	let backdropRef: HTMLElement;
-	let frameRef: HTMLElement;
+	let modalRef = $state<HTMLElement>();
+	let backdropRef = $state<HTMLElement>();
+	let frameRef = $state<HTMLElement>();
 
 	$effect(() => {
 		if (isOpen && modalRef) {
@@ -56,9 +56,12 @@
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
+		if (!isOpen) return;
 		if (e.key === 'Escape') handleClose();
 	}
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 {#if isOpen && project}
 	<div 
@@ -68,7 +71,6 @@
 		aria-modal="true"
 		data-lenis-prevent
 	>
-		<window onkeydown={handleKeydown} />
 		
 		<!-- Backdrop -->
 		<div 

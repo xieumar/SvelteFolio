@@ -38,26 +38,30 @@
 		]
 	};
 
-	onMount(async () => {
-		// Terminal Entrance Animation
-		gsap.fromTo(terminalRef, 
-			{ y: 50, opacity: 0, rotateX: 10, transformPerspective: 1000 }, 
-			{ y: 0, opacity: 1, rotateX: 0, duration: 1.5, ease: 'expo.out', delay: 0.8 }
-		);
+	onMount(() => {
+		const init = async () => {
+			// Terminal Entrance Animation
+			gsap.fromTo(terminalRef, 
+				{ y: 50, opacity: 0, rotateX: 10, transformPerspective: 1000 }, 
+				{ y: 0, opacity: 1, rotateX: 0, duration: 1.5, ease: 'expo.out', delay: 0.8 }
+			);
 
-		// Boot sequence simulation
-		for (const line of bootSequence) {
-			history = [...history, { type: 'system', text: line }];
-			await new Promise(r => setTimeout(r, 300));
-			await tick();
-			if (contentRef) contentRef.scrollTop = contentRef.scrollHeight;
-		}
-		
-		isBooting = false;
-		// focus input
-		tick().then(() => {
-			if (inputRef) inputRef.focus();
-		});
+			// Boot sequence simulation
+			for (const line of bootSequence) {
+				history = [...history, { type: 'system', text: line }];
+				await new Promise(r => setTimeout(r, 300));
+				await tick();
+				if (contentRef) contentRef.scrollTop = contentRef.scrollHeight;
+			}
+			
+			isBooting = false;
+			// focus input
+			tick().then(() => {
+				if (inputRef) inputRef.focus();
+			});
+		};
+
+		init();
 	});
 
 	async function handleCommand(e: KeyboardEvent) {
