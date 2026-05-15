@@ -12,42 +12,42 @@ export interface Project {
 export const projects: Project[] = [
 	{
 		id: '1',
-		title: 'Nexus Intelligence',
-		description: 'A real-time AI analytics platform built with SvelteKit and RxJS. It features advanced data streaming and neural network visualizations.',
-		tags: ['SvelteKit', 'TypeScript', 'Tailwind', 'AI'],
-		image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
-		link: '#',
-		github: '#',
-		color: '#00ff9d'
-	},
-	{
-		id: '2',
-		title: 'Quantum Ledger',
-		description: 'Decentralized financial dashboard with high-fidelity WebGL visualizations and real-time blockchain monitoring.',
-		tags: ['Three.js', 'Solidity', 'Svelte', 'WebGL'],
-		image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800',
-		link: '#',
-		github: '#',
+		title: 'Habit Tracker',
+		description: 'Progressive Web App (PWA) designed to help users build and maintain positive rituals through focused tracking and streak management.',
+		tags: ['Next', 'TypeScript', 'Tailwind', 'PWA'],
+		image: '/projects/habit-tracker.png',
+		link: 'https://habit-tracker14.vercel.app/',
+		github: 'https://github.com/xieumar/Habit-Tracker',
 		color: '#3b82f6'
 	},
 	{
-		id: '3',
-		title: 'Velocity OS',
-		description: 'A terminal-inspired personal operating system for the browser, featuring a custom shell and file system emulation.',
-		tags: ['Svelte', 'Rust', 'WASM', 'Tailwind'],
-		image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=800',
-		link: '#',
-		github: '#',
+		id: '2',
+		title: 'Invoice App',
+		description: 'A modern invoice management application focused on providing a complete lifecycle for invoice management, featuring full CRUD capabilities, draft handling, status tracking, seamless theming, and a fully responsive interface.',
+		tags: ['Next Js', 'TypeScript', 'Tailwind'],
+		image: '/projects/invio.png',
+		link: 'https://invio14.vercel.app/',
+		github: 'https://github.com/xieumar/Invio',
 		color: '#a855f7'
 	},
 	{
-		id: '4',
-		title: 'Aether Cloud',
+		id: '3',
+		title: 'Nexus',
 		description: 'Next-generation cloud infrastructure monitoring tool with predictive analytics and automated scaling logic.',
-		tags: ['Go', 'SvelteKit', 'PostgreSQL', 'Docker'],
-		image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
+		tags: ['Vue', 'Nuxt Js', 'Tailwind'],
+		image: '/projects/nexus.png',
 		link: '#',
-		github: '#',
+		github: 'https://github.com/xieumar/Nexus',
+		color: '#f97316'
+	},
+	{
+		id: '4',
+		title: 'Tourify',
+		description: 'Monorepo housing the Tourify Next.js web platform and embeddable Vite-powered Shepherd tour widget.',
+		tags: ['Next', 'ShepherdJS', 'TypeScript', 'Tailwind'],
+		image: '/projects/tourify.png',
+		link: 'https://tour-app-virid-kappa.vercel.app/',
+		github: 'https://github.com/DammyCodes-all/tour_app',
 		color: '#f97316'
 	}
 ];
