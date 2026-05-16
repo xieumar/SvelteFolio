@@ -107,7 +107,7 @@
 			onclick={() => isModalOpen = true}
 		>
 			<div class="flex flex-col items-center">
-				<h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] text-[var(--text-primary)]">
+				<h2 class="text-4xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.9] text-[var(--text-primary)]">
 					{currentProject.title.split(' ')[0]}
 				</h2>
 				
@@ -115,7 +115,7 @@
 					<div class="w-20 h-20 md:w-32 md:h-32 rounded-3xl overflow-hidden border border-cyber/30 rotate-6 group-hover:rotate-0 transition-all duration-700 shadow-2xl">
 						<img src={currentProject.image} alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" />
 					</div>
-					<h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] text-[var(--text-primary)] opacity-40 group-hover:opacity-100 transition-opacity">
+					<h2 class="text-4xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.9] text-[var(--text-primary)] opacity-40 group-hover:opacity-100 transition-opacity">
 						{currentProject.title.split(' ').slice(1).join(' ') || 'Engine'}
 					</h2>
 				</div>

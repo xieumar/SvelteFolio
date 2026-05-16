@@ -42,7 +42,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: '4',
-		title: 'Tourify',
+		title: 'Tourify app',
 		description: 'Monorepo housing the Tourify Next.js web platform and embeddable Vite-powered Shepherd tour widget.',
 		tags: ['Next', 'ShepherdJS', 'TypeScript', 'Tailwind'],
 		image: '/projects/tourify.png',

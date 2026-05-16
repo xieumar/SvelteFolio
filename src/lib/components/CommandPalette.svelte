@@ -13,6 +13,7 @@
 
 	const actions = [
 		{ id: 'theme', title: 'Switch Theme', icon: 'lucide:sun', action: () => theme.toggle() },
+		{ id: 'play', title: 'Play Diagnostics', icon: 'lucide:cpu', action: () => document.getElementById('mini-game')?.scrollIntoView({ behavior: 'smooth' }) },
 		{ id: 'resume', title: 'Download Resume', icon: 'lucide:download', action: () => window.open('#', '_blank') },
 		{ id: 'contact', title: 'Get in Touch', icon: 'lucide:mail', action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
 	];
@@ -21,15 +22,12 @@
 	
 	let filteredItems = $derived.by((): Item[] => {
 		const term = searchTerm.toLowerCase();
-		const matchedProjects = projects.filter(p => 
-			p.title.toLowerCase().includes(term) || p.tags.some(t => t.toLowerCase().includes(term))
-		).map(p => ({ ...p, type: 'project' as const }));
 		
 		const matchedActions = actions.filter(a => 
 			a.title.toLowerCase().includes(term)
 		).map(a => ({ ...a, type: 'action' as const }));
 
-		return [...matchedActions, ...matchedProjects];
+		return [...matchedActions];
 	});
 
 	function togglePalette() {

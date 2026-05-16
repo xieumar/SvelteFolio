@@ -12,7 +12,7 @@
 	});
 
 	const navLinks = [
-		{ name: 'Work', href: '#projects' },
+		{ name: 'Projects', href: '#projects' },
 		{ name: 'Contact', href: '#contact' }
 	];
 </script>
@@ -22,7 +22,7 @@
 		{isScrolled ? 'glass border-[var(--glass-border)]' : 'bg-[var(--glass-bg)] backdrop-blur-md border-[var(--glass-border)]'}">
 		
 		<a href="/" class="text-xl font-bold tracking-tighter flex items-center gap-2 group">
-			<div class="w-8 h-8 rounded-lg bg-cyber flex items-center justify-center group-hover:rotate-12 transition-transform">
+			<div class="w-8 h-8 rounded-full bg-cyber flex items-center justify-center group-hover:rotate-12 transition-transform">
 				<span class="text-[var(--text-primary)] text-base font-bold">Z</span>
 			</div>
 
@@ -36,7 +36,7 @@
 
 		<div class="flex items-center gap-2">
 			<button 
-				class="p-2 rounded-lg bg-white/5 border border-white/10 text-slate hover:text-white transition-all"
+				class="p-2 rounded-full bg-white/5 border border-white/10 text-slate hover:text-white transition-all"
 				onclick={() => theme.toggle()}
 				aria-label="Toggle Theme"
 			>
@@ -44,14 +44,10 @@
 			</button>
 
 			<button 
-				class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate hover:text-white transition-all"
+				class="flex items-center gap-2 p-2 rounded-full bg-white/5 border border-white/10 text-slate hover:text-white transition-all"
 				onclick={() => window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))}
 			>
 				<Icon icon="lucide:search" class="w-4 h-4" />
-				<div class="flex items-center gap-1 opacity-50">
-					<kbd class="text-[9px] font-mono">⌘</kbd>
-					<kbd class="text-[9px] font-mono">K</kbd>
-				</div>
 			</button>
 		</div>
 	</div>

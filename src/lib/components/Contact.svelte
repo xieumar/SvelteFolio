@@ -149,7 +149,7 @@
 				</span>
 			</div>
 
-			<h2 class="text-6xl md:text-[8rem] font-black tracking-tighter leading-[0.8] uppercase text-[var(--text-primary)] mb-10">
+			<h2 class="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.8] uppercase text-[var(--text-primary)] mb-10">
 				Build <br/> 
 				<span class="opacity-40">Iconic.</span>
 			</h2>
