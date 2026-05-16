@@ -102,20 +102,20 @@
 	<!-- Content -->
 	<div bind:this={contentRef} class="p-6 flex-1 overflow-y-auto font-mono text-sm leading-relaxed space-y-2 scrollbar-hide" onclick={() => inputRef?.focus()}>
 		{#each history as line}
-			<div class:text-cyber={line.type === 'system'} class:text-white={line.type === 'input'} class:text-slate={line.type === 'output'} class="whitespace-pre-wrap">
+			<div class:text-cyber={line.type === 'system'} class:text-[var(--text-primary)]={line.type === 'input'} class:text-[var(--text-secondary)]={line.type === 'output'} class="whitespace-pre-wrap">
 				{line.text}
 			</div>
 		{/each}
 
 		{#if !isBooting}
-			<div class="flex items-center text-white mt-2">
+			<div class="flex items-center text-[var(--text-primary)] mt-2">
 				<span class="text-cyber mr-2">zee@velocity:~$</span>
 				<input 
 					bind:this={inputRef}
 					bind:value={inputValue}
 					onkeydown={handleCommand}
 					type="text" 
-					class="bg-transparent border-none outline-none flex-1 text-white placeholder-slate/30"
+					class="bg-transparent border-none outline-none flex-1 text-[var(--text-primary)] placeholder-slate/30 caret-cyber"
 					spellcheck="false"
 					autocomplete="off"
 				/>

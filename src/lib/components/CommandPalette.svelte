@@ -84,7 +84,7 @@
 
 {#if isOpen}
 	<div 
-		class="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4 bg-obsidian/60 backdrop-blur-sm"
+		class="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4 bg-[var(--bg-primary)]/80 backdrop-blur-sm"
 		onmousedown={togglePalette}
 		role="button"
 		tabindex="-1"
@@ -102,7 +102,7 @@
 					bind:this={inputRef}
 					bind:value={searchTerm}
 					placeholder="Search projects, actions, or type 'help'..."
-					class="w-full bg-transparent border-none outline-none text-lg text-white placeholder:text-slate font-sans"
+					class="w-full bg-transparent border-none outline-none text-lg text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]/50 font-sans"
 				/>
 				<div class="flex items-center gap-1">
 					<kbd class="px-2 py-1 rounded bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[10px] text-[var(--text-secondary)] font-mono uppercase">ESC</kbd>
@@ -125,7 +125,7 @@
 									<Icon icon={item.type === 'project' ? 'lucide:layers' : item.icon} class="w-5 h-5" />
 								</div>
 								<div>
-									<div class="font-bold text-sm {i === selectedIndex ? 'text-cyber' : 'text-white'}">
+									<div class="font-bold text-sm {i === selectedIndex ? 'text-cyber' : 'text-[var(--text-primary)]'}">
 										{item.title}
 									</div>
 									<div class="text-xs text-slate">

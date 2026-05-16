@@ -184,7 +184,7 @@
 
 		<!-- Right: Minimalist Form -->
 		<div class="flex-1 contact-form w-full max-w-xl lg:max-w-none mx-auto">
-			<form onsubmit={handleSubmit} class="bg-[var(--glass-bg)] p-8 md:p-14 rounded-[2rem] border border-[var(--glass-border)] space-y-10 relative overflow-hidden shadow-2xl backdrop-blur-xl">
+			<form onsubmit={handleSubmit} class="bg-[var(--glass-bg)] p-8 md:p-14 rounded-[2rem] border border-[var(--glass-border)] space-y-10 relative overflow-hidden shadow-md dark:shadow-2xl backdrop-blur-xl">
 				{#if isSuccess}
 					<div class="absolute inset-0 bg-[var(--bg-primary)]/95 backdrop-blur-xl z-20 flex flex-col items-center justify-center text-center p-8 animate-in fade-in zoom-in duration-700">
 						<div class="w-24 h-24 bg-[var(--text-primary)] rounded-full flex items-center justify-center mb-8 shadow-2xl scale-in">

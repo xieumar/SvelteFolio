@@ -89,7 +89,7 @@ Get in touch to create something amazing.
 					</span>
 				</a>
 				
-				<a href="/resume.pdf" target="_blank" class="w-full sm:w-auto group px-8 py-4 glass text-white font-semibold uppercase tracking-wider text-sm rounded-full hover:bg-white/10 hover:border-cyber/30 transition-all duration-300 flex items-center justify-center gap-3">
+				<a href="/resume.pdf" target="_blank" class="w-full sm:w-auto group px-8 py-4 glass text-[var(--text-primary)] font-semibold uppercase tracking-wider text-sm rounded-full hover:bg-cyber hover:text-obsidian hover:border-cyber transition-all duration-300 flex items-center justify-center gap-3">
 					<Icon icon="lucide:download" class="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
 					Download Resume
 				</a>
@@ -97,7 +97,7 @@ Get in touch to create something amazing.
 
 			<!-- Social Links -->
 			<div bind:this={socialRef} class="flex items-center gap-4">
-				<a href="https://github.com/xieumar" target="_blank" class="group h-12 w-12 hover:w-[120px] rounded-full glass flex items-center text-slate hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="GitHub">
+				<a href="https://github.com/xieumar" target="_blank" class="group h-12 w-12 hover:w-[120px] rounded-full glass flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-cyber/50 hover:bg-cyber/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="GitHub">
 					<div class="flex items-center justify-center w-12 h-12 shrink-0">
 						<Icon icon="mdi:github" class="w-6 h-6 group-hover:scale-110 transition-transform duration-500" />
 					</div>
@@ -109,7 +109,7 @@ Get in touch to create something amazing.
 					</div>
 					<span class="font-bold text-sm whitespace-nowrap opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">LinkedIn</span>
 				</a>
-				<a href="https://twitter.com/xiaoma0_" target="_blank" class="group h-12 w-12 hover:w-[110px] rounded-full glass flex items-center text-slate hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="Twitter">
+				<a href="https://twitter.com/xiaoma0_" target="_blank" class="group h-12 w-12 hover:w-[110px] rounded-full glass flex items-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-cyber/50 hover:bg-cyber/10 transition-all duration-500 ease-out hover:-translate-y-1 overflow-hidden" aria-label="Twitter">
 					<div class="flex items-center justify-center w-12 h-12 shrink-0">
 						<Icon icon="ri:twitter-x-fill" class="w-5 h-5 group-hover:scale-110 transition-transform duration-500" />
 					</div>
