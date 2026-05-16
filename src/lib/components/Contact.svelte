@@ -166,7 +166,7 @@
 					</div>
 					<div>
 						<div class="text-[10px] text-[var(--text-secondary)] font-mono uppercase tracking-[0.2em] mb-1 group-hover:text-cyber transition-colors">Direct Line</div>
-						<div class="text-xl font-bold text-[var(--text-primary)] group-hover:text-cyber transition-colors">hello@velocity.dev</div>
+						<div class="text-xl font-bold text-[var(--text-primary)] group-hover:text-cyber transition-colors">xieumar@gmail.com</div>
 					</div>
 				</a>
 

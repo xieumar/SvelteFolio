@@ -63,7 +63,7 @@
 					<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber opacity-75"></span>
 					<span class="relative inline-flex rounded-full h-3 w-3 bg-cyber"></span>
 				</span>
-				<span class="text-xs md:text-sm font-mono tracking-widest uppercase text-cyber">Hi, I'm ZEE — Frontend Developer</span>
+				<span class="text-xs md:text-sm font-mono tracking-widest uppercase text-cyber">Hi, I'm ZEE, a Frontend Developer</span>
 			</div>
 
 			<!-- Main Title -->
